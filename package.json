@@ -17,7 +17,6 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.47.10",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2",
     "luxon": "^3.5.0",
     "node-cron": "^3.0.3",
     "resend": "^4.0.1"
