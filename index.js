@@ -1,5 +1,4 @@
 require('dotenv').config();
-const cron = require('node-cron');
 const { createClient } = require('@supabase/supabase-js');
 const { Settings, DateTime } = require('luxon');
 const { Resend } = require('resend');
