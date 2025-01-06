@@ -11,14 +11,13 @@ Settings.defaultLocale = 'es';
 
 async function getSchedules() {
   try {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+    const now = DateTime.now().setZone('America/Caracas');
+    const tomorrow = now.plus({ days: 1 }).toISODate();
 
     const { data, error } = await supabase
       .from('schedules')
       .select('*')
-      .eq('professional_date', tomorrowStr)
+      .eq('professional_date', tomorrow)
       .eq('status', 0);
 
     if (error) throw error;
